@@ -401,12 +401,13 @@ NSString * const kNXOAuth2AccountStoreAccountType = @"kNXOAuth2AccountStoreAccou
         }];
     }
 
-    for (NSString *accountType in accountTypes) {
-        NXOAuth2Client *client = [self pendingOAuthClientForAccountType:accountType];
+    for (NSString *key in self.pendingOAuthClients) {
+        NXOAuth2Client *client = self.pendingOAuthClients[key];
         if ([client openRedirectURL:fixedRedirectURL error:error]) {
             return YES;
         }
     }
+    
     return NO;
 }
 

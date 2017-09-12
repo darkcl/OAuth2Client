@@ -689,7 +689,6 @@ NSString * const kNXOAuth2AccountStoreAccountType = @"kNXOAuth2AccountStoreAccou
     NSDictionary *result = nil;
     NSMutableDictionary *query = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                   (__bridge NSString *)kSecClassGenericPassword, kSecClass,
-                                  kSecAttrAccessibleAlways, kSecAttrAccessible,
                                   serviceName, kSecAttrService,
                                   kCFBooleanTrue, kSecReturnAttributes,
                                   nil];
